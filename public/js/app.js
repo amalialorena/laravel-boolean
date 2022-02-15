@@ -1914,9 +1914,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      postcards: []
+    };
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    var _this = this;
+
+    axios.get('/api/postcards/list').then(function (r) {
+      return _this.postcards = r.data;
+    })["catch"](function (e) {
+      return console.error(e);
+    });
   }
 });
 
@@ -37508,7 +37526,24 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("hello from component")])
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("h1", [_vm._v("Postcards:")]),
+      _vm._v(" "),
+      _vm._l(_vm.postcards, function (postcard) {
+        return _c("div", { key: postcard.id, staticClass: "card" }, [
+          _c("h4", [_vm._v(_vm._s(postcard.sender))]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(postcard.address))]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(postcard.text))]),
+        ])
+      }),
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

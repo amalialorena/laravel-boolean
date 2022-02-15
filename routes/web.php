@@ -22,3 +22,4 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'HomeController@home') -> name('home');
+Route::get('/api/postcards/list', 'ApiController@getPostcards')->name('postcards.list');
