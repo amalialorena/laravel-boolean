@@ -1,7 +1,6 @@
 <template>
     <div class="container">
         <h1>Postcards:</h1>
-
         <div class="card" v-for="postcard in postcards" :key="postcard.id">
            <h4>{{postcard.sender}}</h4> 
            <p>{{postcard.address}}</p>
