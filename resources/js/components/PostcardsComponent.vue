@@ -6,7 +6,8 @@
            <p>{{postcard.address}}</p>
            <p>{{postcard.text}}</p>
            <div>
-               <img :src="'/storage/postcards/'+ postcard.image" alt="postcard.image" width="100px">
+               <img v-if="postcard.image" :src="'/storage/postcards/'+ postcard.image" alt="postcard.image" width="400px">
+               <p v-else>No image available</p>
            </div>
            
         </div>
@@ -20,7 +21,6 @@
         data(){
             return{
                 postcards:[],
-                noImage: "no image",
             };
         },
 
