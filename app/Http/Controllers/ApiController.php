@@ -24,12 +24,25 @@ class ApiController extends Controller
             'sender' => 'required|string|min:3',
             'address' => 'required|string',
             'text' => 'string|min:3',
+            'image' => 'image'
         ]);
 
-        $postcard = Postcard::make($data);
-        $postcard -> save();
+        $imageFile = $request -> $data['image']; //file('image');
+
+        $imageName = rand(100000, 999999).'_'.time() 
+                    .'.'.$imageFile -> getClientOriginalExtension();
+
+        $imageFile -> storeAs('/postcards/', $imageName, 'public');
+
+        $data['image'] = $imageName;
+
+        $postcard = Postcard::create($data);
+       
 
        return redirect() -> route('home');
+
+
+
 
     }
 }

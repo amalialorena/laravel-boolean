@@ -5,6 +5,10 @@
            <h4>{{postcard.sender}}</h4> 
            <p>{{postcard.address}}</p>
            <p>{{postcard.text}}</p>
+           <div>
+               <img :src="'/storage/postcards/'+ postcard.image" alt="postcard.image" width="100px">
+           </div>
+           
         </div>
     </div>
 
@@ -16,6 +20,7 @@
         data(){
             return{
                 postcards:[],
+                noImage: "no image",
             };
         },
 

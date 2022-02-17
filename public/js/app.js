@@ -1920,10 +1920,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      postcards: []
+      postcards: [],
+      noImage: "no image"
     };
   },
   mounted: function mounted() {
@@ -37538,6 +37543,16 @@ var render = function () {
           _c("p", [_vm._v(_vm._s(postcard.address))]),
           _vm._v(" "),
           _c("p", [_vm._v(_vm._s(postcard.text))]),
+          _vm._v(" "),
+          _c("div", [
+            _c("img", {
+              attrs: {
+                src: "/storage/postcards/" + postcard.image,
+                alt: "postcard.image",
+                width: "100px",
+              },
+            }),
+          ]),
         ])
       }),
     ],
