@@ -23,3 +23,10 @@ header {
     max-width: 600px;
     margin: 0 auto 20px;
 }
+
+#marker {
+    background-image: url('img/mapMarker.png');
+    background-size: cover;
+    width: 50px;
+    height: 70px;
+  }

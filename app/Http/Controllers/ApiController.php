@@ -27,7 +27,8 @@ class ApiController extends Controller
             'image' => 'image'
         ]);
 
-        $imageFile = $request -> $data['image']; //file('image');
+        $imageFile = $request -> file('image');
+        //$data['image']; 
 
         $imageName = rand(100000, 999999).'_'.time() 
                     .'.'.$imageFile -> getClientOriginalExtension();

@@ -10978,3 +10978,10 @@ header {
   margin: 0 auto 20px;
 }
 
+#marker {
+  background-image: url(/images/mapMarker.png?35ebb4a8371794ed240e2550d6f3ff3c);
+  background-size: cover;
+  width: 50px;
+  height: 70px;
+}
+
